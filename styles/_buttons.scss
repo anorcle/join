@@ -1,0 +1,26 @@
+.button {
+    outline: none;
+    border: none;
+    border-radius: $radius-curve;
+    background-color: lime;
+    color: white;
+    box-shadow: $shadow;
+    padding: 8px 30px;
+    font-size: 20px;
+    cursor: pointer;
+
+    &:active {
+        transform: scale(0.9);
+    }
+
+    &:hover {
+        box-shadow: none;
+    }
+}
+
+
+.button--join {
+    background-color: #FE3333;
+    color: white;
+    border: none;
+}

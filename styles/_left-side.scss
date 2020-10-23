@@ -1,0 +1,29 @@
+.main_left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    ;
+
+    .main_left-side_icon-holder {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 40%;
+        width: 100%;
+    }
+
+    .main_left-side_progress-holder {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: 60%;
+        width: 100%;
+        background: #f2f2f2;
+    }
+}
