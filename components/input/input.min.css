@@ -36,7 +36,8 @@
  height:1em;
  border:.1em solid gray;
  border-radius:0.5em;
- background:none
+ background:none;
+ outline: none;
 }
 .input-wrapper .input:focus {
  border:.1em solid blue

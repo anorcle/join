@@ -1,46 +1,10 @@
 /**
  * <div class="input-wrapper">
- *     <input type="text" class="input" id="input1" data-label="Name">
- *     <label for="input1" id="label1" class="label">Name</label>
+ *     <input type="text" class="input" id="input">
+ *     <label for="input" class="label">Name</label>
  * </div>
  * 
  */
-
-function getInputElement({ type, label }) {
-
-    let inputWrapper = document.createElement('div');
-    inputWrapper.classList.add('input-wrapper');
-
-    let input = document.createElement('input');
-    input.classList.add('input');
-    input.type = type;
-    // input.id = id || type;
-
-    let labelElm = document.createElement('label');
-    labelElm.classList.add('label');
-    labelElm.innerText = label || type;
-    labelElm.htmlFor = input.id;
-    console.log(labelElm);
-
-
-    if (type.toLowerCase() === 'date') {
-        labelElm.classList.add('float');
-    } else {
-        input.addEventListener('focus', function (eve) {
-            labelElm.classList.add('float');
-        })
-
-        input.addEventListener('blur', function (eve) {
-            if (input.value === '') {
-                labelElm.classList.remove('float');
-            }
-        })
-    }
-
-    inputWrapper.appendChild(input);
-    inputWrapper.appendChild(labelElm);
-    return inputWrapper;
-}
 
 class AnorcleFloatInput extends HTMLElement {
     constructor() {
@@ -49,25 +13,40 @@ class AnorcleFloatInput extends HTMLElement {
     connectedCallback() {
         console.log("Connected Callback: ")
         const inputWrapper = document.createElement("div")
-              inputWrapper.classList.add("input-wrapper")
-        const input = document.createElement("input")
-              input.type = this.getAttribute("type") /* || "text" */
-              input.classList.add("input")
-              input.id = this.id + "-inp"
+        inputWrapper.classList.add("input-wrapper")
         const label = document.createElement("label")
-              label.setAttribute("for", input.id)
-              label.classList.add("label")
-              label.innerText = this.getAttribute("label")
+        let input
+        if (this.hasAttribute("multiline") && this.getAttribute("multiline").toLowerCase() === "true") {
+            input = document.createElement("textarea")
+            input.style.minHeight = '3em'
+            input.style.resize = "none"
+        } else {
+            input = document.createElement("input")
+            input.type = this.getAttribute("type") || "text"
+            if (input.type === "date" || input.type === "time") {
+                label.classList.add('float')
+            }
+        }
+        input.classList.add("input")
+        input.id = this.id + "-inp"
+        label.setAttribute("for", input.id)
+        label.classList.add("label")
+        label.innerText = this.getAttribute("label")
 
         input.addEventListener('focus', function (eve) {
-            label.classList.add('float');
+            label.classList.add('float')
         })
         input.addEventListener('blur', function (eve) {
-            if (input.value === '') {
+            if (input.value === '' && input.type !== "date" && input.type !== "time") {
                 label.classList.remove('float');
             }
         })
-
+        if (input.tagName === "TEXTAREA") {
+            input.addEventListener('input', function (eve) {
+                input.style.height = 'auto'
+                input.style.height = input.scrollHeight + 'px'
+            })
+        }
         inputWrapper.append(label, input)
         this.appendChild(inputWrapper)
     }
