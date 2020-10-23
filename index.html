@@ -7,11 +7,14 @@
 
     <!-- stylesheets and fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/main.min.css">
+    <link rel="stylesheet" href="./css/main.min.css">
     <style></style>
 
     <!-- scripts -->
     <script src="./scripts/main.js" type="module"></script>
+
+    <!-- Anorcle-Float-Label Component -->
+    <script src="./components/input/input.js"></script>
 
     <title>Join Anorcle</title>
 </head>
@@ -30,9 +33,23 @@
             </div>
         </div>
         <div class="main_right-side">
+            <button class="button button--join">Join</button>
             <div class="main_right-side_card-holder">
-                <div class="card card1">
-                    <button class="button button--join">Join</button>
+                <div class="card">
+                    <h2 class="card_header">Important Info</h2>
+                    <div class="card_row">
+                        <Anorcle-Float-Input label="First Name" id="firstName" type="text"></Anorcle-Float-Input>
+                        <Anorcle-Float-Input label="Last Name" id="lastName" type="text"></Anorcle-Float-Input>
+                    </div>
+                    <Anorcle-Float-Input label="Email for Contact" id="email" type="text"></Anorcle-Float-Input>
+                </div>
+                <div class="card">
+                    <h2 class="card_header">Important Info</h2>
+                    <div class="card_row">
+                        <Anorcle-Float-Input label="Country" id="country" type="text"></Anorcle-Float-Input>
+                        <Anorcle-Float-Input label="State" id="state" type="text"></Anorcle-Float-Input>
+                        <Anorcle-Float-Input label="City" id="city" type="text"></Anorcle-Float-Input>
+                    </div>
                 </div>
             </div>
             <div class="main_right-side_button-holder">

@@ -1,0 +1,53 @@
+$input-width: 100%;
+
+$input-height: 1em;
+$input-padding: 1em;
+$label-padding: 0.1em;
+$input-wrapper-padding: 0;
+$label-height: 1em;
+$input-border-size: 0.1em;
+%fontstyle {
+    font-size: 1rem;
+    font-weight: normal;
+    font-family: Arial, Helvetica, sans-serif;
+}
+$fontsize: 1rem;
+.input-wrapper {
+    width: $input-width;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: $input-wrapper-padding;
+    @extend %fontstyle;
+    .label {
+        position: absolute;
+        height: $label-height;
+        padding: $label-padding;
+        top: $input-padding + $input-wrapper-padding + $input-border-size - $label-padding;
+        left: $input-padding + $input-wrapper-padding + $input-border-size - $label-padding;
+        @extend %fontstyle;
+        transition: all 0.1s ease-in-out;
+        cursor: text;
+    }
+    .input {
+        padding: $input-padding;
+        height: $input-height;
+        border: $input-border-size solid gray;
+        border-radius: 0.5em;
+        @extend %fontstyle;
+        background: none;
+        outline: none;
+        min-width: 0;
+        flex: 0 1 1;
+        &:focus {
+            border: $input-border-size solid blue;
+        }
+    }
+    .float {
+        top: ($input-wrapper-padding + $input-border-size -$label-height/2)/0.8;
+        left: ($input-padding*2/3 + $input-wrapper-padding + $input-border-size - $label-padding)/0.8;
+        font-size: 0.8rem;
+        background-color: #fff;
+    }
+}
