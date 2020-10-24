@@ -10,7 +10,7 @@
     .main_right-side_card-holder {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
         gap: 50px;
         height: 80%;
@@ -19,7 +19,7 @@
     .main_right-side_button-holder {
         width: 100%;
         height: 20%;
-        display: flex;
+        display: none; //will be set to flex via js
         flex-direction: row;
         justify-content: space-around;
         align-items: center;

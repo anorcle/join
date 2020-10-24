@@ -1,4 +1,11 @@
- @import './variables', './left-side', './right-side', './buttons', './card', './anorcle-float-input';
+ @import './variables', './left-side', './right-side', './buttons', './card',
+ './anorcle-float-input';
+
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
 
  body {
      width: 100vw;

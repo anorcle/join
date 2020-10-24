@@ -33,9 +33,10 @@
             </div>
         </div>
         <div class="main_right-side">
-            <button class="button button--join">Join</button>
+            <button class="button button--join" id="join">Join</button>
             <div class="main_right-side_card-holder">
-                <div class="card">
+                <!-- to get important info -->
+                <div class="card important">
                     <h2 class="card_header">Important Info</h2>
                     <div class="card_row">
                         <Anorcle-Float-Input label="First Name" id="firstName" type="text"></Anorcle-Float-Input>
@@ -43,18 +44,69 @@
                     </div>
                     <Anorcle-Float-Input label="Email for Contact" id="email" type="text"></Anorcle-Float-Input>
                 </div>
-                <div class="card">
-                    <h2 class="card_header">Important Info</h2>
+                <!-- to get the address -->
+                <div class="card address">
+                    <h2 class="card_header">Address</h2>
                     <div class="card_row">
                         <Anorcle-Float-Input label="Country" id="country" type="text"></Anorcle-Float-Input>
                         <Anorcle-Float-Input label="State" id="state" type="text"></Anorcle-Float-Input>
                         <Anorcle-Float-Input label="City" id="city" type="text"></Anorcle-Float-Input>
                     </div>
                 </div>
+                <!-- to get social profiles -->
+                <div class="card social">
+                    <h2 class="card_header">Active Social Profile (atleast 2)</h2>
+                    <div class="card_row card_row-r_20_80">
+                        <Anorcle-Float-Input label="Platform Name" id="social1_platform" type="text">
+                        </Anorcle-Float-Input>
+                        <Anorcle-Float-Input label="Link to Profile" id="social1_link" type="text">
+                        </Anorcle-Float-Input>
+                    </div>
+                    <div class="card_row card_row-r_20_80">
+                        <Anorcle-Float-Input label="Platform Name" id="social2_platform" type="text">
+                        </Anorcle-Float-Input>
+                        <Anorcle-Float-Input label="Link to Profile" id="social2_link" type="text">
+                        </Anorcle-Float-Input>
+                    </div>
+                    <div class="card_row card_row-r_20_80">
+                        <Anorcle-Float-Input label="Platform Name" id="social3_platform" type="text">
+                        </Anorcle-Float-Input>
+                        <Anorcle-Float-Input label="Link to Profile" id="social3_link" type="text">
+                        </Anorcle-Float-Input>
+                    </div>
+                </div>
+                <!-- to get department choice -->
+
+                <!-- to get general details -->
+                <div class="card general">
+                    <h2 class="card_header">Let us learn more about you</h2>
+                    <div class="card_row">
+                        <Anorcle-Float-Input label="Passion & Skills" id="passion-and-skills" type="text"
+                            multiline="true"></Anorcle-Float-Input>
+                    </div>
+                    <div class="card_row">
+                        <Anorcle-Float-Input label="Why join Anorcle?" id="why-anorcle" type="text" multiline="true">
+                        </Anorcle-Float-Input>
+                    </div>
+                </div>
+                <!-- to know about commitments and dedication -->
+                <div class="card commitment">
+                    <h2 class="card_header">Commitment & Dedication</h2>
+                    <div class="card_row">
+                        <Anorcle-Float-Input label="Time Commitment for Anorcle?" id="investment-time" type="text"
+                            multiline="true"></Anorcle-Float-Input>
+                    </div>
+                    <div class="card_row">
+                        <Anorcle-Float-Input label="Write more about your schedule" id="schedule" type="text"
+                            multiline="true"></Anorcle-Float-Input>
+                    </div>
+                </div>
+
+
             </div>
             <div class="main_right-side_button-holder">
-                <button class="button button--back">Back</button>
-                <button class="button button--next">Next</button>
+                <button class="button button--back" id="back">Back</button>
+                <button class="button button--next" id="next">Next</button>
             </div>
         </div>
     </div>
