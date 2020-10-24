@@ -3,8 +3,8 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    width: 30%;
-    height: 100%;
+    width: 100%;
+    height: auto;
     font-family: 'Roboto', sans-serif;
     ;
 
@@ -13,8 +13,11 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        height: 40%;
         width: 100%;
+        height: 30%;
+        max-height: 200px;
+        background: #fff;
+        padding: 24px;
     }
 
     .main_left-side_progress-holder {
@@ -22,8 +25,9 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        height: 60%;
+        height: auto;
         width: 100%;
         background: #f2f2f2;
+        padding: 24px;
     }
 }

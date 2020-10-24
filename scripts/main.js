@@ -10,16 +10,6 @@ document.getElementById("join").onclick = () => {
     document.getElementsByClassName("main_right-side_button-holder")[0].style.display = "flex";
 }
 
-// back button
-document.getElementById("back").onclick = () => {
-    currentCardIndex--;
-    if (currentCardIndex < 0) {
-        currentCardIndex = cards.length - 1;
-    }
-    currentCardIndex = currentCardIndex % cards.length;
-    changeCards();
-}
-
 // next button
 document.getElementById("next").onclick = () => {
 
