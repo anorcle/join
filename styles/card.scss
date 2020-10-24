@@ -2,10 +2,11 @@
     display: none; //will be set to flex via js
     box-sizing: border-box;
     background-color: #fff;
-    max-width: 800px;
+    max-width: 600px;
     width: 100%;
     flex-direction: column;
     padding: 24px;
+    margin: 20px;
     outline: 1px solid black;
 
     &_header {
