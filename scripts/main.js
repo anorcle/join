@@ -6,7 +6,7 @@ document.getElementById("join").onclick = () => {
     currentCardIndex++;
     currentCardIndex = currentCardIndex % (cards.length - 1);
     changeCards();
-    document.getElementById("join").style.display = "none";
+    document.getElementsByClassName("join-btn-folder")[0].style.display = "none";
     document.getElementsByClassName("main_right-side_button-holder")[0].style.display = "flex";
 }
 

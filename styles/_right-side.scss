@@ -7,6 +7,15 @@
     height: 100%;
     background-color: #219653;
 
+    .join-btn-folder {
+        display: flex; //will be set to none via js
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+
     .main_right-side_card-holder {
         display: flex;
         flex-direction: row;
@@ -15,6 +24,10 @@
         gap: 50px;
         height: 80%;
         width: 100%;
+
+        Anorcle-Float-Input {
+            margin-top: 14px;
+        }
     }
 
     .main_right-side_button-holder {
