@@ -11,15 +11,18 @@ class AnorcleFloatInput extends HTMLElement {
         super()
     }
     connectedCallback() {
-        console.log("Connected Callback: ")
         const inputWrapper = document.createElement("div")
         inputWrapper.classList.add("input-wrapper")
         const label = document.createElement("label")
         let input
         if (this.hasAttribute("multiline") && this.getAttribute("multiline").toLowerCase() === "true") {
-            input = document.createElement("textarea")
-            input.style.minHeight = '3em'
-            input.style.resize = "none"
+            input = document.createElement("div")
+            input.contentEditable = true
+            input.style.height = "auto"
+            input.style.minHeight = "3em"
+            label.addEventListener("mousedown", () =>{
+                setTimeout(() => this.input.focus(), 0)
+            })
         } else {
             input = document.createElement("input")
             input.type = this.getAttribute("type") || "text"
@@ -37,23 +40,21 @@ class AnorcleFloatInput extends HTMLElement {
             label.classList.add('float')
         })
         input.addEventListener('blur', function (eve) {
-            if (input.value === '' && input.type !== "date" && input.type !== "time") {
+            if ((input.value || input.innerText) === '' && input.type !== "date" && input.type !== "time") {
                 label.classList.remove('float')
             }
         })
-        if (input.tagName === "TEXTAREA") {
-            input.addEventListener('input', function (eve) {
-                input.style.height = 'auto'
-                input.style.height = input.scrollHeight + 'px'
-            })
-        }
         inputWrapper.append(label, input)
         this.appendChild(inputWrapper)
         this.input = input
         this.label = label
     }
     get value () {
-        return this.input.value
+        if (this.input.tagName === "DIV") {
+            return this.input.innerText
+        } else {
+            return this.input.value
+        }
     }
     set value (value) {
         if(value === '' && this.input.type !== "date" && this.input.type !== "time") {
@@ -61,7 +62,11 @@ class AnorcleFloatInput extends HTMLElement {
         } else {
             this.label.classList.add('float')
         }
-        return this.input.value = value
+        if (this.input.tagName === "DIV") {
+            return this.input.innerText = value
+        } else {
+            return this.input.value = value
+        }
     }
 }
 customElements.define('anorcle-float-input', AnorcleFloatInput);
