@@ -38,7 +38,7 @@ class AnorcleFloatInput extends HTMLElement {
         })
         input.addEventListener('blur', function (eve) {
             if (input.value === '' && input.type !== "date" && input.type !== "time") {
-                label.classList.remove('float');
+                label.classList.remove('float')
             }
         })
         if (input.tagName === "TEXTAREA") {
@@ -49,7 +49,19 @@ class AnorcleFloatInput extends HTMLElement {
         }
         inputWrapper.append(label, input)
         this.appendChild(inputWrapper)
+        this.input = input
+        this.label = label
     }
-
+    get value () {
+        return this.input.value
+    }
+    set value (value) {
+        if(value === '' && this.input.type !== "date" && this.input.type !== "time") {
+            this.label.classList.remove('float')
+        } else {
+            this.label.classList.add('float')
+        }
+        return this.input.value = value
+    }
 }
 customElements.define('anorcle-float-input', AnorcleFloatInput);
