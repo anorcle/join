@@ -3,4 +3,5 @@ window.onload = () => {
     addClickToProgressElement();
     addClickToJoinButton();
     addClickToNextButton();
+    addClickToAddMoreSocial();
 }

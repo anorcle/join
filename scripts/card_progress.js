@@ -56,4 +56,38 @@ const changeCards = (index) => {
         cards[i].style.display = "none";
     }
     cards[index].style.display = "flex";
+    setStatus(index, 0);
+}
+
+
+// for social
+const addClickToAddMoreSocial = () => {
+
+
+
+    let newSocial = `<div class="card_row card_row-r_20_80">
+    <Anorcle-Float-Input label="Platform Name" type="text">
+    </Anorcle-Float-Input>
+    <Anorcle-Float-Input label="Link to Profile" type="text">
+    </Anorcle-Float-Input>
+</div>`;
+    document.getElementById("addMoreSocial").onclick = () => {
+        let row = document.createElement("div");
+
+        row.classList = "card_row card_row-r_20_80";
+        let platform = document.createElement("Anorcle-Float-Input");
+        platform.setAttribute("label", "Platform Name");
+        platform.setAttribute("type", "text");
+
+        let profile = document.createElement("Anorcle-Float-Input");
+        profile.setAttribute("label", "Link to Profile");
+        profile.setAttribute("type", "text");
+
+        row.appendChild(platform);
+        row.appendChild(profile);
+
+        document.getElementById("socialList").appendChild(row);
+    }
+
+
 }

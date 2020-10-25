@@ -12,8 +12,10 @@
 
     <!-- scripts -->
     <script src="./scripts/card_progress.js"></script>
+    <script src="./scripts/progress.js"></script>
     <script src="./scripts/main.js" type="module"></script>
     <script src="./scripts/submit.js"></script>
+    <script src="./scripts/cardValidation.js"></script>
     <!-- Anorcle-Float-Label Component -->
     <script src="./components/input/input.js"></script>
 
@@ -46,7 +48,10 @@
                 <div class="progress-element">
                     <div class="progress-element_logo">
                         <img src="./icons/progress/address.svg" alt="imp">
-                        <img src="./icons/progress/status/completed.svg" alt="status" class="status">
+                        <div class="status">
+                            <img src="./icons/progress/status/completed.svg" alt="status">
+                        </div>
+
                     </div>
                     <div class="progress-element_text">Current Address</div>
                     <div class="progress-line"></div>
@@ -55,7 +60,10 @@
                 <div class="progress-element">
                     <div class="progress-element_logo">
                         <img src="./icons/progress/social.svg" alt="imp">
-                        <img src="./icons/progress/status/completed.svg" alt="status" class="status">
+                        <div class="status">
+                            <img src="./icons/progress/status/completed.svg" alt="status">
+                        </div>
+
                     </div>
                     <div class="progress-element_text">Social Profile</div>
                     <div class="progress-line"></div>
@@ -64,7 +72,9 @@
                 <div class="progress-element">
                     <div class="progress-element_logo">
                         <img src="./icons/progress/building.svg" alt="imp">
-                        <img src="./icons/progress/status/completed.svg" alt="status" class="status">
+                        <div class="status">
+                            <img src="./icons/progress/status/completed.svg" alt="status">
+                        </div>
                     </div>
                     <div class="progress-element_text">Department and Position</div>
                     <div class="progress-line"></div>
@@ -73,7 +83,9 @@
                 <div class="progress-element">
                     <div class="progress-element_logo">
                         <img src="./icons/progress/ice.svg" alt="imp">
-                        <img src="./icons/progress/status/completed.svg" alt="status" class="status">
+                        <div class="status">
+                            <img src="./icons/progress/status/completed.svg" alt="status">
+                        </div>
                     </div>
                     <div class="progress-element_text">General Info</div>
                     <div class="progress-line"></div>
@@ -82,7 +94,9 @@
                 <div class="progress-element">
                     <div class="progress-element_logo">
                         <img src="./icons/progress/cup.svg" alt="imp">
-                        <img src="./icons/progress/status/completed.svg" alt="status" class="status">
+                        <div class="status">
+                            <img src="./icons/progress/status/completed.svg" alt="status">
+                        </div>
                     </div>
                     <div class="progress-element_text">Important Info</div>
                 </div>
@@ -104,6 +118,9 @@
                         <Anorcle-Float-Input label="Last Name" id="lastName" type="text"></Anorcle-Float-Input>
                     </div>
                     <Anorcle-Float-Input label="Email for Contact" id="email" type="text"></Anorcle-Float-Input>
+
+                    <h2 class="card_header">Birth Date</h2>
+                    <Anorcle-Float-Input label="Enter Date" id="dob" type="date"></Anorcle-Float-Input>
                 </div>
                 <!-- to get the address -->
                 <div class="card address">
@@ -117,24 +134,22 @@
                 <!-- to get social profiles -->
                 <div class="card social">
                     <h2 class="card_header">Active Social Profile (atleast 2)</h2>
-                    <div class="card_row card_row-r_20_80">
-                        <Anorcle-Float-Input label="Platform Name" id="social1_platform" type="text">
-                        </Anorcle-Float-Input>
-                        <Anorcle-Float-Input label="Link to Profile" id="social1_link" type="text">
-                        </Anorcle-Float-Input>
+                    <div id="socialList">
+                        <div class="card_row card_row-r_20_80">
+                            <Anorcle-Float-Input label="Platform Name" type="text">
+                            </Anorcle-Float-Input>
+                            <Anorcle-Float-Input label="Link to Profile" type="text">
+                            </Anorcle-Float-Input>
+                        </div>
+                        <div class="card_row card_row-r_20_80">
+                            <Anorcle-Float-Input label="Platform Name" type="text">
+                            </Anorcle-Float-Input>
+                            <Anorcle-Float-Input label="Link to Profile" type="text">
+                            </Anorcle-Float-Input>
+                        </div>
+
                     </div>
-                    <div class="card_row card_row-r_20_80">
-                        <Anorcle-Float-Input label="Platform Name" id="social2_platform" type="text">
-                        </Anorcle-Float-Input>
-                        <Anorcle-Float-Input label="Link to Profile" id="social2_link" type="text">
-                        </Anorcle-Float-Input>
-                    </div>
-                    <div class="card_row card_row-r_20_80">
-                        <Anorcle-Float-Input label="Platform Name" id="social3_platform" type="text">
-                        </Anorcle-Float-Input>
-                        <Anorcle-Float-Input label="Link to Profile" id="social3_link" type="text">
-                        </Anorcle-Float-Input>
-                    </div>
+                    <div class="add-more-social" id="addMoreSocial"></div>
                 </div>
                 <!-- to get department choice -->
                 <div class="card department-and-position">
