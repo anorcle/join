@@ -16,11 +16,18 @@
 
     .join-btn-folder {
         display: flex; //will be set to none via js
-        flex-direction: row;
-        justify-content: space-around;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
         height: 93vh;
         width: 100%;
+
+        img {
+            position: absolute;
+            width: 35%;
+            bottom: 10px;
+            right: 10px;
+        }
     }
 
     .main_right-side_card-holder {
@@ -42,8 +49,12 @@
         height: auto;
         display: none; //will be set to flex via js
         flex-direction: row;
-        justify-content: flex-end;
+        justify-content: space-between;
         align-items: center;
         padding-right: 10px;
+    }
+
+    img {
+        width: 35%;
     }
 }

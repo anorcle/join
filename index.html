@@ -11,6 +11,7 @@
     <style></style>
 
     <!-- scripts -->
+    <script src="./scripts/card_progress.js"></script>
     <script src="./scripts/main.js" type="module"></script>
 
     <!-- Anorcle-Float-Label Component -->
@@ -29,25 +30,85 @@
                 <h2 class="headings">Anorcle Joining Application</h2>
             </div>
             <div class="main_left-side_progress-holder">
+                <!-- imp -->
                 <div class="progress-element">
                     <div class="progress-element_logo">
                         <img src="./icons/imp.svg" alt="imp">
-                        <div class="completed"></div>
+                        <div class="completed">
+                            <img src="./icons/completed.svg" alt="">
+                        </div>
+                        <div class="current"></div>
+                    </div>
+                    <div class="progress-element_text">Important Info</div>
+                    <div class="progress-line"></div>
+                </div>
+                <!-- address -->
+                <div class="progress-element">
+                    <div class="progress-element_logo">
+                        <img src="./icons/address.svg" alt="imp">
+                        <div class="completed">
+                            <img src="./icons/completed.svg" alt="">
+                        </div>
+                        <div class="current"></div>
+                    </div>
+                    <div class="progress-element_text">Current Address</div>
+                    <div class="progress-line"></div>
+                </div>
+                <!-- social -->
+                <div class="progress-element">
+                    <div class="progress-element_logo">
+                        <img src="./icons/social.svg" alt="imp">
+                        <div class="completed">
+                            <img src="./icons/completed.svg" alt="">
+                        </div>
+                        <div class="current"></div>
+                    </div>
+                    <div class="progress-element_text">Social Profile</div>
+                    <div class="progress-line"></div>
+                </div>
+                <!-- department -->
+                <div class="progress-element">
+                    <div class="progress-element_logo">
+                        <img src="./icons/building.svg" alt="imp">
+                        <div class="completed">
+                            <img src="./icons/completed.svg" alt="">
+                        </div>
+                        <div class="current"></div>
+                    </div>
+                    <div class="progress-element_text">Department and Position</div>
+                    <div class="progress-line"></div>
+                </div>
+                <!-- general info -->
+                <div class="progress-element">
+                    <div class="progress-element_logo">
+                        <img src="./icons/ice.svg" alt="imp">
+                        <div class="completed">
+                            <img src="./icons/completed.svg" alt="">
+                        </div>
+                        <div class="current"></div>
+                    </div>
+                    <div class="progress-element_text">General Info</div>
+                    <div class="progress-line"></div>
+                </div>
+                <!-- commitment -->
+                <div class="progress-element">
+                    <div class="progress-element_logo">
+                        <img src="./icons/cup.svg" alt="imp">
+                        <div class="completed">
+                            <img src="./icons/completed.svg" alt="">
+                        </div>
                         <div class="current"></div>
                     </div>
                     <div class="progress-element_text">Important Info</div>
                 </div>
-                <div class="progress-element">
-                    <div class="progress-element_logo">
-                        <img src="./icons/address.svg" alt="">
-                    </div>
-                    <div class="progress-element_text">Current Address</div>
-                </div>
+
             </div>
         </div>
         <div class="main_right-side">
             <div class="join-btn-folder">
+
                 <button class="button button--join" id="join">Join</button>
+                <img src="./icons/join.svg" alt="">
             </div>
             <div class="main_right-side_card-holder">
                 <!-- to get important info -->
@@ -99,7 +160,9 @@
                         </Anorcle-Float-Input>
                     </div>
                     <div class="card_row">
-                        <Anorcle-Float-Input label="Position" id="position" type="text" options="Frontend Developer, Backend Developer, User Interface Designer, User Experience Designer, Creative Designer, Motion Graphic Designer, Marketing Intern" multi="true">
+                        <Anorcle-Float-Input label="Position" id="position" type="text"
+                            options="Frontend Developer, Backend Developer, User Interface Designer, User Experience Designer, Creative Designer, Motion Graphic Designer, Marketing Intern"
+                            multi="true">
                         </Anorcle-Float-Input>
                     </div>
                 </div>
@@ -132,8 +195,10 @@
 
             </div>
             <div class="main_right-side_button-holder">
+                <img src="./icons/step.svg" alt="">
                 <button class="button button--next" id="next">Next</button>
             </div>
+
         </div>
     </div>
 </body>
