@@ -39,7 +39,7 @@ class AnorcleFloatInput extends HTMLElement {
             }
         }
         input.classList.add("input")
-        input.id = this.id + "-inp"
+        input.id = (this.id || Math.random()) + "-inp" // TO: Write Consistent Solution for ID
         label.setAttribute("for", input.id)
         label.classList.add("label")
         label.innerText = this.getAttribute("label")
