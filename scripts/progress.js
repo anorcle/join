@@ -1,4 +1,4 @@
-let statusSVG = ["./icons/progress/status/current.svg", "./icons/progress/status/incomplete.svg", "./icons/progress/status/complete.svg"];
+let statusSVG = ["./icons/progress/status/current.svg", "./icons/progress/status/incomplete.svg", "./icons/progress/status/completed.svg"];
 
 const setStatus = (cardIndex, status) => {
     let statusLogo = document.getElementsByClassName("status");

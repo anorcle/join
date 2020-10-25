@@ -18,8 +18,16 @@ const showCard = (i) => {
     tab.classList.add("upAnimation");
     tab.onanimationend = () => {
         tab.classList.remove("upAnimation");
-        changeCards(i);
+        changeCards(i, "click");
     }
+
+    if (i == cards.length - 1) {
+        takeForSubmit();
+    } else {
+        document.getElementById("next").innerText = "Next";
+        addClickToNextButton();
+    }
+
     currentCardIndex = i;
 
 }
@@ -32,16 +40,39 @@ const addClickToJoinButton = () => {
 }
 
 const addClickToNextButton = () => {
+    let nextBtn = document.getElementById("next");
 
-    document.getElementById("next").onclick = () => {
-        let tab = cards[currentCardIndex];
-        tab.classList.add("upAnimation");
-        tab.onanimationend = () => {
-            tab.classList.remove("upAnimation");
-            currentCardIndex++;
-            currentCardIndex = currentCardIndex % cards.length;
-            changeCards(currentCardIndex);
+    nextBtn.onclick = () => {
+        let newIndex = currentCardIndex + 1;
+        if (newIndex < cards.length) {
+            let tab = cards[currentCardIndex];
+            tab.classList.add("upAnimation");
+            tab.onanimationend = () => {
+                currentCardIndex = newIndex;
+                tab.classList.remove("upAnimation");
+                nextBtn.innerText = "Next";
+                changeCards(newIndex);
+                if (newIndex == cards.length - 1) {
+                    takeForSubmit();
+
+                }
+            }
         }
+
+
+    }
+}
+
+const takeForSubmit = () => {
+    let nextBtn = document.getElementById("next");
+    currentCardIndex = cards.length - 1;
+    nextBtn.innerText = "submit";
+    nextBtn.onclick = () => {
+        if (allCardsAreValid()) {
+            // submit();
+        }
+        console.log(allCardsAreValid());
+        console.log("solo");
     }
 }
 
@@ -51,26 +82,23 @@ const goAwayJoin = () => {
     document.getElementsByClassName("main_right-side_button-holder")[0].style.display = "flex";
 }
 
-const changeCards = (index) => {
+const changeCards = (index, method = "button") => {
     for (let i = 0; i < cards.length; i++) {
         cards[i].style.display = "none";
     }
     cards[index].style.display = "flex";
-    setStatus(index, 0);
+    if (method == "button") {
+        checkValidation(index);
+    } else {
+        checkValidation();
+    }
+
 }
 
 
 // for social
 const addClickToAddMoreSocial = () => {
 
-
-
-    let newSocial = `<div class="card_row card_row-r_20_80">
-    <Anorcle-Float-Input label="Platform Name" type="text">
-    </Anorcle-Float-Input>
-    <Anorcle-Float-Input label="Link to Profile" type="text">
-    </Anorcle-Float-Input>
-</div>`;
     document.getElementById("addMoreSocial").onclick = () => {
         let row = document.createElement("div");
 
