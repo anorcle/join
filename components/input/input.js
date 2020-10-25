@@ -124,10 +124,10 @@ class AnorcleFloatInput extends HTMLElement {
             console.log('think');
         }
     
-        if (window.innerWidth >= this.offsetLeft + optionContainer.offsetWidth) {
-            optionContainer.style.left = this.offsetLeft + 'px';
-        } else if (rect.right - rect.width >= 0) {
-            optionContainer.style.left = (rect.right - rect.width) + 'px';
+        if (window.innerWidth >= rect.left + optionContainer.offsetWidth) {
+            optionContainer.style.left = rect.left + 'px';
+        } else if (rect.right - optionContainer.offsetWidth >= 0) {
+            optionContainer.style.left = (rect.right - optionContainer.offsetWidth) + 'px';
         } else if (window.innerWidth >= optionContainer.offsetWidth) {
             optionContainer.style.left = 0;
         } else {
