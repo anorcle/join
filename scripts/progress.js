@@ -5,5 +5,11 @@ const setStatus = (cardIndex, status) => {
 
     statusLogo[cardIndex].children[0].src = statusSVG[status];
     statusLogo[cardIndex].style.display = "flex";
+    setIllustration(cardIndex);
+}
 
+let illustrationSVG = ["ill-imp", "ill-address", "ill-social", "ill-department", "ill-general", "ill-focus"];
+
+const setIllustration = (index) => {
+    document.getElementById("right-illustration").src = `./icons/illustration/${illustrationSVG[index]}.svg`;
 }
