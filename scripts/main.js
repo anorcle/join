@@ -13,10 +13,15 @@ document.getElementById("join").onclick = () => {
 // next button
 document.getElementById("next").onclick = () => {
 
-    currentCardIndex++;
-    currentCardIndex = currentCardIndex % cards.length;
-    changeCards();
+    let tab = cards[currentCardIndex];
+    tab.classList.add("upAnimation");
+    tab.onanimationend = () => {
+        tab.classList.remove("upAnimation");
 
+        currentCardIndex++;
+        currentCardIndex = currentCardIndex % cards.length;
+        changeCards();
+    }
 }
 
 const changeCards = () => {
