@@ -30,8 +30,10 @@
             </div>
             <div class="main_left-side_progress-holder">
                 <div class="progress-element">
-                    <div class="progress-element_logo done">
+                    <div class="progress-element_logo">
                         <img src="./icons/imp.svg" alt="imp">
+                        <div class="completed"></div>
+                        <div class="current"></div>
                     </div>
                     <div class="progress-element_text">Important Info</div>
                 </div>
@@ -40,18 +42,6 @@
                         <img src="./icons/address.svg" alt="">
                     </div>
                     <div class="progress-element_text">Current Address</div>
-                </div>
-                <div class="progress-element">
-                    <div class="progress-element_logo"></div>
-                    <div class="progress-element_text">Social Profile</div>
-                </div>
-                <div class="progress-element">
-                    <div class="progress-element_logo"></div>
-                    <div class="progress-element_text">General Info</div>
-                </div>
-                <div class="progress-element">
-                    <div class="progress-element_logo"></div>
-                    <div class="progress-element_text">Commitment and dedication</div>
                 </div>
             </div>
         </div>
@@ -71,7 +61,7 @@
                 </div>
                 <!-- to get the address -->
                 <div class="card address">
-                    <h2 class="card_header">Current Address</h2>
+                    <h2 class="card_header">Address</h2>
                     <div class="card_row">
                         <Anorcle-Float-Input label="Country" id="country" type="text"></Anorcle-Float-Input>
                         <Anorcle-Float-Input label="State" id="state" type="text"></Anorcle-Float-Input>
@@ -101,19 +91,6 @@
                     </div>
                 </div>
                 <!-- to get department choice -->
-                <div class="card social">
-                    <h2 class="card_header">Department And Position</h2>
-                    <div class="card_row card_row-r_20_80">
-                        <Anorcle-Float-Input label="Select Department" id="department" type="text"
-                            options="Department 1, Department 2, Department 3" multi="true">
-                        </Anorcle-Float-Input>
-                    </div>
-                    <div class="card_row card_row-r_20_80">
-                        <Anorcle-Float-Input label="Select Position" id="position" type="text"
-                            options="Frontend Developer, Backend Developer, Designer" multi="true">
-                        </Anorcle-Float-Input>
-                    </div>
-                </div>
 
                 <!-- to get general details -->
                 <div class="card general">
