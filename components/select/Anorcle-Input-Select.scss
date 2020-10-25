@@ -1,0 +1,8 @@
+.option-container {
+    position: absolute;
+    .option {
+        outline: 2px solid red;
+        padding: 0.5em 1em;
+        max-width: 200px;
+    }
+}
