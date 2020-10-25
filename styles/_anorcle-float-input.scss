@@ -14,48 +14,98 @@ $input-border-size: 0.1em;
 }
 
 $fontsize: 1rem;
-
-.input-wrapper {
-    width: $input-width;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    padding: $input-wrapper-padding;
-    @extend %fontstyle;
-    font-family: 'Montserrat', sans-serif;
-
-    .label {
-        position: absolute;
-        height: $label-height;
-        padding: $label-padding;
-        top: $input-padding + $input-wrapper-padding + $input-border-size - $label-padding;
-        left: $input-padding + $input-wrapper-padding + $input-border-size - $label-padding;
+Anorcle-Float-Input {
+    .input-wrapper {
+        width: $input-width;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding: $input-wrapper-padding;
         @extend %fontstyle;
-        transition: all 0.1s ease-in-out;
-        cursor: text;
-    }
+        font-family: 'Montserrat', sans-serif;
 
-    .input {
-        padding: $input-padding;
-        height: $input-height;
-        border: $input-border-size solid gray;
-        border-radius: 0.5em;
-        @extend %fontstyle;
-        background: none;
-        outline: none;
-        min-width: 0;
-        flex: 0 1 1;
+        .label {
+            position: absolute;
+            height: $label-height;
+            padding: $label-padding;
+            top: $input-padding + $input-wrapper-padding + $input-border-size - $label-padding;
+            left: $input-padding + $input-wrapper-padding + $input-border-size - $label-padding;
+            @extend %fontstyle;
+            transition: all 0.1s ease-in-out;
+            cursor: text;
+        }
 
-        &:focus {
-            border: $input-border-size solid blue;
+        .input {
+            padding: $input-padding;
+            height: $input-height;
+            border: $input-border-size solid gray;
+            border-radius: 0.5em;
+            @extend %fontstyle;
+            background: none;
+            outline: none;
+            min-width: 0;
+            flex: 0 1 1;
+
+            &:focus {
+                border: $input-border-size solid blue;
+            }
+        }
+
+        .icon-container {
+            position: absolute;
+            padding: $label-padding;
+            top: $input-padding + $input-wrapper-padding + $input-border-size - $label-padding;
+            right: $input-padding + $input-wrapper-padding + $input-border-size - $label-padding;
+        }
+
+        .float {
+            top: ($input-wrapper-padding + $input-border-size -$label-height/2)/0.8;
+            left: ($input-padding*2/3 + $input-wrapper-padding + $input-border-size - $label-padding)/0.8;
+            font-size: 0.8rem;
+            background-color: #fff;
+        }
+        .input:focus~.icon-container {
+            transform: rotateZ(180deg);
         }
     }
-
-    .float {
-        top: ($input-wrapper-padding + $input-border-size -$label-height/2)/0.8;
-        left: ($input-padding*2/3 + $input-wrapper-padding + $input-border-size - $label-padding)/0.8;
-        font-size: 0.8rem;
-        background-color: #fff;
+}
+.afi-option-container {
+    position: fixed;
+    display: none;
+    min-width: 200px;
+    flex-direction: column;
+    background: #ffffff;
+    z-index: 10;
+    max-height: 100vh;
+    @extend %fontstyle;
+    border-radius: 5px;
+    // box-shadow: 0 9px 12px -6px rgba(0, 0, 0, 0.2), 0 19px 29px 2px rgba(0, 0, 0, 0.14), 0 7px 36px 6px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2), 0 10px 14px 1px rgba(0, 0, 0, 0.14), 0 4px 18px 3px rgba(0, 0, 0, 0.12);
+    
+    .option {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        align-items: center;
+        align-content: center;
+        padding: $input-padding;
+        cursor: pointer;
+        &:hover {
+            background-color: #520081;
+            color: #fff;
+        }
+        .option_selected_icon {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            visibility: hidden;
+        }
+    }
+    .option-selected {
+        .option_selected_icon {
+            visibility: visible;
+        }
     }
 }
