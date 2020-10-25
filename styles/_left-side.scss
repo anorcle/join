@@ -28,6 +28,9 @@
         height: 70%;
         width: 100%;
         background: #f2f2f2;
-        padding: 24px;
+        padding: 10px;
+        box-sizing: border-box;
+        overflow: hidden;
+        overflow-y: scroll;
     }
 }
