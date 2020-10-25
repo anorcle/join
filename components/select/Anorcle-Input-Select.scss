@@ -6,3 +6,11 @@
         max-width: 200px;
     }
 }
+.select-input {
+    display: flex;
+    .selected-text {
+        font-size: 1rem;
+        padding: 1em;
+        outline: 1px solid red;
+    }
+}
