@@ -23,6 +23,7 @@ $fontsize: 1rem;
     position: relative;
     padding: $input-wrapper-padding;
     @extend %fontstyle;
+    font-family: 'Montserrat', sans-serif;
 
     .label {
         position: absolute;
