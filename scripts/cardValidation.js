@@ -113,3 +113,11 @@ const allCardsAreValid = () => {
     }
     return true
 }
+
+const clearAllCards = () => {
+    let inputs = document.getElementsByTagName("Anorcle-Float-Input");
+
+    for (let i = 0; i < inputs.length; i++) {
+        inputs[i].value = "";
+    }
+}

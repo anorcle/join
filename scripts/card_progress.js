@@ -75,6 +75,7 @@ const takeForSubmit = () => {
                 makeAllCardsInvisible();
                 document.getElementsByClassName("main_right-side_button-holder")[0].style.display = "none";
                 setStatus(cards.length - 1, 2);
+                clearAllCards();
             }).catch((e) => {
                 console.log(e);
             });
