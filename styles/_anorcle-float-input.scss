@@ -14,6 +14,7 @@ $input-border-size: 0.1em;
 }
 
 $fontsize: 1rem;
+
 Anorcle-Float-Input {
     .input-wrapper {
         width: $input-width;
@@ -48,7 +49,7 @@ Anorcle-Float-Input {
             flex: 0 1 1;
 
             &:focus {
-                border: $input-border-size solid blue;
+                border: $input-border-size solid lightgreen;
             }
         }
 
@@ -65,11 +66,13 @@ Anorcle-Float-Input {
             font-size: 0.8rem;
             background-color: #fff;
         }
+
         .input:focus~.icon-container {
             transform: rotateZ(180deg);
         }
     }
 }
+
 .afi-option-container {
     position: fixed;
     display: none;
@@ -82,7 +85,7 @@ Anorcle-Float-Input {
     border-radius: 5px;
     // box-shadow: 0 9px 12px -6px rgba(0, 0, 0, 0.2), 0 19px 29px 2px rgba(0, 0, 0, 0.14), 0 7px 36px 6px rgba(0, 0, 0, 0.12);
     box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2), 0 10px 14px 1px rgba(0, 0, 0, 0.14), 0 4px 18px 3px rgba(0, 0, 0, 0.12);
-    
+
     .option {
         display: flex;
         justify-content: space-between;
@@ -91,10 +94,12 @@ Anorcle-Float-Input {
         align-content: center;
         padding: $input-padding;
         cursor: pointer;
+
         &:hover {
             background-color: #520081;
             color: #fff;
         }
+
         .option_selected_icon {
             display: flex;
             justify-content: center;
@@ -103,6 +108,7 @@ Anorcle-Float-Input {
             visibility: hidden;
         }
     }
+
     .option-selected {
         .option_selected_icon {
             visibility: visible;
