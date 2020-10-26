@@ -8,7 +8,7 @@ const submit = async () => {
     const city = document.getElementById("city").value
 
     //... TO do for social profile
-    const socialProfiles = [...document.querySelectorAll(".social>.card_row")].map(cardRow => {
+    const socialProfiles = [...document.getElementById("socialList").children].map(cardRow => {
         return {
             "name": cardRow.firstElementChild.value,
             "value": `[${cardRow.lastElementChild.value}](${cardRow.lastElementChild.value})`
