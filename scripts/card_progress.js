@@ -69,13 +69,16 @@ const takeForSubmit = () => {
     nextBtn.innerText = "submit";
     nextBtn.onclick = () => {
         if (allCardsAreValid()) {
-            submit();
+            submit().then((e) => {
+                console.log(e);
+                document.getElementsByClassName("submit-msg")[0].style.display = "flex";
+                makeAllCardsInvisible();
+                document.getElementsByClassName("main_right-side_button-holder")[0].style.display = "none";
+                setStatus(cards.length - 1, 2);
+            }).catch((e) => {
+                console.log(e);
+            });
         }
-        document.getElementsByClassName("submit-msg")[0].style.display = "flex";
-        makeAllCardsInvisible();
-        document.getElementsByClassName("main_right-side_button-holder")[0].style.display = "none";
-        console.log(allCardsAreValid());
-        console.log("solo");
     }
 }
 
