@@ -71,6 +71,9 @@ const takeForSubmit = () => {
         if (allCardsAreValid()) {
             submit();
         }
+        document.getElementsByClassName("submit-msg")[0].style.display = "flex";
+        makeAllCardsInvisible();
+        document.getElementsByClassName("main_right-side_button-holder")[0].style.display = "none";
         console.log(allCardsAreValid());
         console.log("solo");
     }
@@ -79,9 +82,15 @@ const takeForSubmit = () => {
 // make join go away and bring cards
 const goAwayJoin = () => {
     document.getElementsByClassName("join-btn-folder")[0].style.display = "none";
+    document.getElementsByClassName("submit-msg")[0].style.display = "none";
     document.getElementsByClassName("main_right-side_button-holder")[0].style.display = "flex";
 }
 
+const makeAllCardsInvisible = () => {
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].style.display = "none";
+    }
+}
 const changeCards = (index, method = "button") => {
     for (let i = 0; i < cards.length; i++) {
         cards[i].style.display = "none";
