@@ -69,7 +69,7 @@ const takeForSubmit = () => {
     nextBtn.innerText = "submit";
     nextBtn.onclick = () => {
         if (allCardsAreValid()) {
-            // submit();
+            submit();
         }
         console.log(allCardsAreValid());
         console.log("solo");
