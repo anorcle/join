@@ -15,7 +15,7 @@ const submit = async () => {
     }).filter(profile => profile.name !== "" && profile.value !== "[]()")
 
     const departments = document.getElementById("department").value
-    const position = document.getElementById("position").value
+    const positions = document.getElementById("position").value
 
     const passionAndSkills = document.getElementById("passion-and-skills").value
     const whyAnorcle = document.getElementById("why-anorcle").value
@@ -29,7 +29,7 @@ const submit = async () => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ firstName, lastName, email, country, state, city, socialProfiles, departments, position, passionAndSkills, whyAnorcle, investmentTime, schedule }),
+                body: JSON.stringify({ firstName, lastName, email, country, state, city, socialProfiles, departments, positions, passionAndSkills, whyAnorcle, investmentTime, schedule }),
             })
             const payload = JSON.parse(await response.text())
             if (payload.code === 200) {
