@@ -68,16 +68,18 @@ const takeForSubmit = () => {
     currentCardIndex = cards.length - 1;
     nextBtn.innerText = "submit";
     nextBtn.onclick = () => {
+        document.getElementsByClassName("submit-msg")[0].style.display = "flex";
+        makeAllCardsInvisible();
+        document.getElementsByClassName("main_right-side_button-holder")[0].style.display = "none";
+        setStatus(cards.length - 1, 2);
+        document.querySelector(".submit-msg h2").innerText = "Please Wait! We are processing your Application!"
         if (allCardsAreValid()) {
-            submit().then((e) => {
-                console.log(e);
-                document.getElementsByClassName("submit-msg")[0].style.display = "flex";
-                makeAllCardsInvisible();
-                document.getElementsByClassName("main_right-side_button-holder")[0].style.display = "none";
-                setStatus(cards.length - 1, 2);
+            submit().then((message) => {
+                document.querySelector(".submit-msg h2").innerText = message
                 clearAllCards();
-            }).catch((e) => {
-                console.log(e);
+            }).catch((message) => {
+                document.querySelector(".submit-msg h2").innerText = message
+                document.getElementsByClassName("main_right-side_button-holder")[0].style.display = "flex";
             });
         }
     }
