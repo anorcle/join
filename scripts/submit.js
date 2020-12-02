@@ -2,6 +2,7 @@ const submit = async () => {
 
     const firstName = document.getElementById("firstName").value
     const lastName = document.getElementById("lastName").value
+    const dob = document.getElementById("dob").value
     const email = document.getElementById("email").value
     const country = document.getElementById("country").value
     const state = document.getElementById("state").value
@@ -29,7 +30,7 @@ const submit = async () => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ firstName, lastName, email, country, state, city, socialProfiles, departments, positions, passionAndSkills, whyAnorcle, investmentTime, schedule }),
+                body: JSON.stringify({ firstName, lastName, dob, email, country, state, city, socialProfiles, departments, positions, passionAndSkills, whyAnorcle, investmentTime, schedule }),
             })
             const payload = JSON.parse(await response.text())
             if (payload.code === 200) {
