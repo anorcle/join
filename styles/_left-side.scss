@@ -8,6 +8,16 @@
     height: 100%;
     box-sizing: border-box;
 
+    @media (max-width:$mobile-width) {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        position: fixed;
+        z-index: 2;
+        // padding: 4px;
+        // display: none;
+    }
+
     .main_left-side_icon-holder {
         display: flex;
         flex-direction: column;
@@ -18,10 +28,31 @@
         max-height: 200px;
         background: #fff;
         padding: 24px;
+        margin: 0;
+
+        @media (max-width:$mobile-width) {
+            width: 100%;
+            padding: 4px;
+            margin: 0;
+            top: 0;
+            flex-direction: row;
+            justify-content: center;
+
+            img {
+                display: inline;
+                height: 50px;
+            }
+        }
 
         .headings {
             text-align: center;
+
+            @media (max-width:$mobile-width) {
+                margin-left: 48px;
+
+            }
         }
+
     }
 
     .main_left-side_progress-holder {
@@ -36,5 +67,13 @@
         box-sizing: border-box;
         overflow: hidden;
         overflow-y: scroll;
+
+        @media (max-width:$mobile-width) {
+            width: 100%;
+            flex-direction: row;
+            overflow: hidden;
+            height: auto;
+            padding-top: 10px;
+        }
     }
 }
