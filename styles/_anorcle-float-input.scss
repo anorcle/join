@@ -47,6 +47,7 @@ Anorcle-Float-Input {
             outline: none;
             min-width: 0;
             flex: 0 1 1;
+            word-wrap: break-word;
 
             &:focus {
                 border: $input-border-size solid lightgreen;
