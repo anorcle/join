@@ -31,6 +31,23 @@ $yellow: #F2C94C;
         padding: 2px;
         position: relative;
 
+        &:after {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            width: 5px;
+            height: 40px;
+            background: $yellow;
+            z-index: -1;
+            transform: translateY(100%);
+        }
+
+        @media (max-width:$mobile-width) {
+            &:after {
+                transform: rotate(90deg) translateY(-120%);
+            }
+        }
+
         .status {
             display: none;
             position: absolute;
@@ -48,23 +65,6 @@ $yellow: #F2C94C;
 
         @media (max-width:$mobile-width) {
             display: none;
-        }
-    }
-
-    .progress-line {
-        position: absolute;
-        width: 5px;
-        height: 40px;
-        background: $yellow;
-        margin-left: 26px;
-        margin-top: 60px;
-        z-index: -1;
-
-        @media (max-width:$mobile-width) {
-            position: relative;
-            margin: 0;
-            transform: rotate(90deg);
-            height: 70px;
         }
     }
 }
